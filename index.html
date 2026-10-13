@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calculate student total marks, percentage, grade, and result.">
+  <title>Student Marks Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <section class="calculator-card">
+      <header class="page-header">
+        <div class="icon" aria-hidden="true">📚</div>
+        <p class="eyebrow">STUDENT MINI PROJECT</p>
+        <h1>Student Marks Calculator</h1>
+        <p class="subtitle">Enter marks for five subjects to calculate the total, percentage, grade, and result.</p>
+      </header>
+
+      <form id="marks-form" novalidate>
+        <div class="field">
+          <label for="student-name">Student name</label>
+          <input id="student-name" name="studentName" type="text" maxlength="60" placeholder="Enter student name" autocomplete="name" required>
+        </div>
+
+        <div class="subjects-grid">
+          <div class="field">
+            <label for="subject-1">Subject 1</label>
+            <input id="subject-1" name="subject1" type="number" min="0" max="100" step="1" placeholder="0–100" required>
+          </div>
+          <div class="field">
+            <label for="subject-2">Subject 2</label>
+            <input id="subject-2" name="subject2" type="number" min="0" max="100" step="1" placeholder="0–100" required>
+          </div>
+          <div class="field">
+            <label for="subject-3">Subject 3</label>
+            <input id="subject-3" name="subject3" type="number" min="0" max="100" step="1" placeholder="0–100" required>
+          </div>
+          <div class="field">
+            <label for="subject-4">Subject 4</label>
+            <input id="subject-4" name="subject4" type="number" min="0" max="100" step="1" placeholder="0–100" required>
+          </div>
+          <div class="field">
+            <label for="subject-5">Subject 5</label>
+            <input id="subject-5" name="subject5" type="number" min="0" max="100" step="1" placeholder="0–100" required>
+          </div>
+        </div>
+
+        <p class="hint">Each subject is out of 100. Passing mark is 35 in every subject.</p>
+        <p id="error-message" class="error-message" role="alert" aria-live="polite"></p>
+
+        <div class="actions">
+          <button type="submit" class="button primary">Calculate result</button>
+          <button type="reset" class="button secondary">Reset</button>
+        </div>
+      </form>
+
+      <section id="result" class="result" aria-live="polite" hidden>
+        <h2>Result summary</h2>
+        <p id="result-student" class="student-name"></p>
+        <div class="result-grid">
+          <div class="result-item">
+            <span>Total marks</span>
+            <strong id="total-marks">0 / 500</strong>
+          </div>
+          <div class="result-item">
+            <span>Percentage</span>
+            <strong id="percentage">0%</strong>
+          </div>
+          <div class="result-item">
+            <span>Grade</span>
+            <strong id="grade">—</strong>
+          </div>
+          <div class="result-item">
+            <span>Status</span>
+            <strong id="status">—</strong>
+          </div>
+        </div>
+        <p class="grading-note">Grading: A+ 90%+, A 80–89%, B 70–79%, C 60–69%, D 35–59%, F below 35%.</p>
+      </section>
+
+      <footer>Built with HTML, CSS &amp; JavaScript</footer>
+    </section>
+  </main>
+</body>
+</html>
